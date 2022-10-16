@@ -1,0 +1,14 @@
+method: random
+metric:
+  name: val/accuracy
+  goal: maximize
+parameters:
+  backbone:
+    values:
+      - lin
+      - conv
+      - conv_pretrained
+  lr:
+    distribution: log_uniform_values
+    min: 0.000005
+    max: 0.1
