@@ -17,4 +17,92 @@ Then, for each possible pair of left and right halves, the model predicts a labe
 
 ## Why "Amphisbaena"?
 
-An amphisbaena is a mystical, two-headed snake. Unlike a siamese network, the image recognition arms are not
+An amphisbaena is a two-headed snake. Unlike a siamese network, the image recognition arms do not share parameters.
+
+## Usage
+
+### Training
+
+Install with poetry
+
+```bash
+poetry install
+```
+
+Begin by sweeping for usable hyperparameters.
+
+```bash
+wandb login
+poetry run cli --wandb-project amphisbaena sweep --sweep-config-fp sweep.yml
+```
+
+Once an acceptable model is trained, check the artifact path in wandb.
+
+```bash
+wandb artifact get jfisher40/amphisbaena/amphisbaena:v6
+```
+
+### Inference
+
+```python
+import torch
+from pl_bolts.datamodules.mnist_datamodule import MNISTDataModule
+
+from amphisbaena.model import Amphisbaena
+from amphisbaena.viz import visualize_model_outputs, visualize_shuffled_batch
+from amphisbaena.data import create_shuffled_batch, split
+
+model = Amphisbaena.from_checkpoint("")
+```
+
+Preprocess the MNIST data
+
+<details>
+
+```python
+data = MNISTDataModule(
+    num_workers=multiprocessing.cpu_count(),
+    normalize=True,
+    batch_size=512 if torch.cuda.is_available() else 64,
+    val_split=0.01,
+)
+if backbone.startswith("conv"):
+    pipeline = [T.Resize((100, 100)), data.default_transforms()]
+    transforms = T.Compose(pipeline)
+    data.train_transforms = data.val_transforms = data.test_transforms = transforms
+    data.prepare_data()
+    data.setup()
+else:
+    data.train_transforms = data.val_transforms = data.test_transforms = None
+data.prepare_data()
+data.setup()
+```
+
+</details>
+
+Run inference with the `.assign()` method:
+
+```python
+from amphisbaena.data import split
+
+batch = next(iter(data.val_dataloader()))
+(imgs, _) = batch
+lefts, rights = split(imgs)
+model.assign(lefts, rights).idxs_left_pred
+```
+
+You can visualize the matching with the `visualize_model_outputs` method.
+
+```python
+visualize_model_outputs(model, imgs[:8,...]);
+```
+
+A well-performing model will produce a visualization where left-halves have a high-score when matched to their corresponding right-halves. These correct matches are on the diagonal. A high-score is blue.
+
+Correspondingly, the incorrect matches (which are off-diagonal) should have a low-score. Low-score is yellow.
+
+![good model output](docs/good.png)
+
+A poorly performing model will assign high-scores to incorrect matches and high-scores to correct matches low-scores, like so:
+
+![bad model output](docs/bad.png)
