@@ -109,6 +109,6 @@ Correspondingly, the incorrect matches (which are off-diagonal) should have a lo
 
 ![good model output](docs/good.png)
 
-A poorly performing model will assign high-scores to incorrect matches and high-scores to correct matches low-scores, like so:
+A poorly performing model will assign high-scores to incorrect matches and low-scores to correct matches, like so:
 
 ![bad model output](docs/bad.png)

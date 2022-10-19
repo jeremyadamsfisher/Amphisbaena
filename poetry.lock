@@ -47,27 +47,6 @@ frozenlist = ">=1.1.0"
 
 [[package]]
 category = "main"
-description = "High level compatibility layer for multiple asynchronous event loop implementations"
-name = "anyio"
-optional = false
-python-versions = ">=3.6.2"
-version = "3.6.1"
-
-[package.dependencies]
-idna = ">=2.8"
-sniffio = ">=1.1"
-
-[package.dependencies.typing-extensions]
-python = "<3.8"
-version = "*"
-
-[package.extras]
-doc = ["sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme", "packaging"]
-test = ["uvloop (>=0.15)", "mock (>=4)", "uvloop (<0.15)", "contextlib2", "trustme", "pytest-mock (>=3.6.1)", "pytest (>=7.0)", "hypothesis (>=4.0)", "coverage (>=4.5)"]
-trio = ["trio (>=0.16)"]
-
-[[package]]
-category = "main"
 description = "Timeout context manager for asyncio programs"
 name = "async-timeout"
 optional = false
@@ -145,7 +124,7 @@ python = "<3.8"
 version = "*"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Extended pickling support for Python objects"
 name = "cloudpickle"
 optional = false
@@ -162,7 +141,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 version = "0.4.5"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Composable style cycles"
 name = "cycler"
 optional = false
@@ -170,7 +149,7 @@ python-versions = ">=3.6"
 version = "0.11.0"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Python bindings for the docker credentials store API"
 name = "docker-pycreds"
 optional = false
@@ -182,24 +161,6 @@ six = ">=1.4.0"
 
 [[package]]
 category = "main"
-description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
-name = "fastapi"
-optional = false
-python-versions = ">=3.7"
-version = "0.85.1"
-
-[package.dependencies]
-pydantic = ">=1.6.2,<1.7 || >1.7,<1.7.1 || >1.7.1,<1.7.2 || >1.7.2,<1.7.3 || >1.7.3,<1.8 || >1.8,<1.8.1 || >1.8.1,<2.0.0"
-starlette = "0.20.4"
-
-[package.extras]
-all = ["email-validator (>=1.1.1,<2.0.0)", "itsdangerous (>=1.1.0,<3.0.0)", "jinja2 (>=2.11.2,<4.0.0)", "orjson (>=3.2.1,<4.0.0)", "python-multipart (>=0.0.5,<0.0.6)", "pyyaml (>=5.3.1,<7.0.0)", "requests (>=2.24.0,<3.0.0)", "ujson (>=4.0.1,<4.0.2 || >4.0.2,<4.1.0 || >4.1.0,<4.2.0 || >4.2.0,<4.3.0 || >4.3.0,<5.0.0 || >5.0.0,<5.1.0 || >5.1.0,<6.0.0)", "uvicorn (>=0.12.0,<0.19.0)"]
-dev = ["autoflake (>=1.4.0,<2.0.0)", "flake8 (>=3.8.3,<6.0.0)", "pre-commit (>=2.17.0,<3.0.0)", "uvicorn (>=0.12.0,<0.19.0)"]
-doc = ["mdx-include (>=1.4.1,<2.0.0)", "mkdocs-markdownextradata-plugin (>=0.1.7,<0.3.0)", "mkdocs-material (>=8.1.4,<9.0.0)", "mkdocs (>=1.1.2,<2.0.0)", "pyyaml (>=5.3.1,<7.0.0)", "typer (>=0.4.1,<0.7.0)"]
-test = ["anyio (>=3.2.1,<4.0.0)", "black (22.8.0)", "databases (>=0.3.2,<0.7.0)", "email-validator (>=1.1.1,<2.0.0)", "flake8 (>=3.8.3,<6.0.0)", "flask (>=1.1.2,<3.0.0)", "httpx (>=0.23.0,<0.24.0)", "isort (>=5.0.6,<6.0.0)", "mypy (0.971)", "orjson (>=3.2.1,<4.0.0)", "passlib (>=1.7.2,<2.0.0)", "peewee (>=3.13.3,<4.0.0)", "pytest-cov (>=2.12.0,<4.0.0)", "pytest (>=7.1.3,<8.0.0)", "python-jose (>=3.3.0,<4.0.0)", "python-multipart (>=0.0.5,<0.0.6)", "pyyaml (>=5.3.1,<7.0.0)", "requests (>=2.24.0,<3.0.0)", "sqlalchemy (>=1.3.18,<1.5.0)", "types-orjson (3.6.2)", "types-ujson (5.4.0)", "ujson (>=4.0.1,<4.0.2 || >4.0.2,<4.1.0 || >4.1.0,<4.2.0 || >4.2.0,<4.3.0 || >4.3.0,<5.0.0 || >5.0.0,<5.1.0 || >5.1.0,<6.0.0)"]
-
-[[package]]
-category = "dev"
 description = "Tools to manipulate font files"
 name = "fonttools"
 optional = false
@@ -269,7 +230,7 @@ ssh = ["paramiko"]
 tqdm = ["tqdm"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Git Object Database"
 name = "gitdb"
 optional = false
@@ -280,7 +241,7 @@ version = "4.0.9"
 smmap = ">=3.0.1,<6"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "GitPython is a python library used to interact with Git repositories"
 name = "gitpython"
 optional = false
@@ -338,16 +299,16 @@ description = "HTTP/2-based RPC framework"
 name = "grpcio"
 optional = false
 python-versions = ">=3.7"
-version = "1.49.1"
+version = "1.50.0"
 
 [package.dependencies]
 six = ">=1.5.2"
 
 [package.extras]
-protobuf = ["grpcio-tools (>=1.49.1)"]
+protobuf = ["grpcio-tools (>=1.50.0)"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Gym: A universal API for reinforcement learning environments"
 name = "gym"
 optional = false
@@ -376,25 +337,12 @@ testing = ["pygame (2.1.0)", "box2d-py (2.3.5)", "swig (>=4.0.0,<5.0.0)", "openc
 toy_text = ["pygame (2.1.0)"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Notices for gym"
 name = "gym-notices"
 optional = false
 python-versions = "*"
 version = "0.0.8"
-
-[[package]]
-category = "main"
-description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
-name = "h11"
-optional = false
-python-versions = ">=3.7"
-version = "0.14.0"
-
-[package.dependencies]
-[package.dependencies.typing-extensions]
-python = "<3.8"
-version = "*"
 
 [[package]]
 category = "main"
@@ -426,7 +374,7 @@ perf = ["ipython"]
 testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 (<5)", "pytest-cov", "pytest-enabler (>=1.3)", "packaging", "pyfakefs", "flufl.flake8", "pytest-perf (>=0.9.2)", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)", "importlib-resources (>=1.3)"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Lightweight pipelining with Python functions"
 name = "joblib"
 optional = false
@@ -434,7 +382,7 @@ python-versions = ">=3.7"
 version = "1.2.0"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "A fast implementation of the Cassowary constraint solver"
 name = "kiwisolver"
 optional = false
@@ -486,7 +434,7 @@ python-versions = ">=3.7"
 version = "2.1.1"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Python plotting package"
 name = "matplotlib"
 optional = false
@@ -545,7 +493,7 @@ version = "21.3"
 pyparsing = ">=2.0.2,<3.0.5 || >3.0.5"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "File system general utilities"
 name = "pathtools"
 optional = false
@@ -565,7 +513,7 @@ docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-issues
 tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Promises/A+ implementation for Python"
 name = "promise"
 optional = false
@@ -587,12 +535,12 @@ python-versions = ">=3.5"
 version = "3.19.6"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Cross-platform lib for process and system monitoring in Python."
 name = "psutil"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "5.9.2"
+version = "5.9.3"
 
 [package.extras]
 test = ["ipaddress", "mock", "enum34", "pywin32", "wmi"]
@@ -618,21 +566,6 @@ pyasn1 = ">=0.4.6,<0.5.0"
 
 [[package]]
 category = "main"
-description = "Data validation and settings management using python type hints"
-name = "pydantic"
-optional = false
-python-versions = ">=3.7"
-version = "1.10.2"
-
-[package.dependencies]
-typing-extensions = ">=4.1.0"
-
-[package.extras]
-dotenv = ["python-dotenv (>=0.10.4)"]
-email = ["email-validator (>=1.0.3)"]
-
-[[package]]
-category = "main"
 description = "Deprecation tooling"
 name = "pydeprecate"
 optional = false
@@ -651,7 +584,7 @@ version = "3.0.9"
 diagrams = ["railroad-diagrams", "jinja2"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Extensions to the standard Python datetime module"
 name = "python-dateutil"
 optional = false
@@ -660,17 +593,6 @@ version = "2.8.2"
 
 [package.dependencies]
 six = ">=1.5"
-
-[[package]]
-category = "main"
-description = "A streaming multipart parser for Python"
-name = "python-multipart"
-optional = false
-python-versions = "*"
-version = "0.0.5"
-
-[package.dependencies]
-six = ">=1.4.0"
 
 [[package]]
 category = "main"
@@ -782,7 +704,7 @@ version = "4.9"
 pyasn1 = ">=0.1.3"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "A set of python modules for machine learning and data mining"
 name = "scikit-learn"
 optional = false
@@ -802,7 +724,7 @@ examples = ["seaborn (>=0.9.0)", "pandas (>=0.25.0)", "scikit-image (>=0.14.5)",
 tests = ["pyamg (>=4.0.0)", "mypy (>=0.770)", "black (>=21.6b0)", "flake8 (>=3.8.2)", "pytest-cov (>=2.9.0)", "pytest (>=5.0.1)", "pandas (>=0.25.0)", "scikit-image (>=0.14.5)", "matplotlib (>=2.2.3)"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "SciPy: Scientific Library for Python"
 name = "scipy"
 optional = false
@@ -813,7 +735,7 @@ version = "1.6.0"
 numpy = ">=1.16.5"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Python client for Sentry (https://sentry.io)"
 name = "sentry-sdk"
 optional = false
@@ -848,7 +770,7 @@ starlette = ["starlette (>=0.19.1)"]
 tornado = ["tornado (>=5)"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "A Python module to customize the process title"
 name = "setproctitle"
 optional = false
@@ -859,7 +781,7 @@ version = "1.3.2"
 test = ["pytest"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "the blessed package to manage your versions by scm tags"
 name = "setuptools-scm"
 optional = false
@@ -881,7 +803,7 @@ test = ["pytest (>=6.2)", "virtualenv (>20)"]
 toml = ["setuptools (>=42)"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "A generator library for concise, unambiguous and URL-safe UUIDs."
 name = "shortuuid"
 optional = false
@@ -897,7 +819,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 version = "1.16.0"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "A set of python modules for machine learning and data mining"
 name = "sklearn"
 optional = false
@@ -908,38 +830,12 @@ version = "0.0"
 scikit-learn = "*"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "A pure Python implementation of a sliding window memory map manager"
 name = "smmap"
 optional = false
 python-versions = ">=3.6"
 version = "5.0.0"
-
-[[package]]
-category = "main"
-description = "Sniff out which async library your code is running under"
-name = "sniffio"
-optional = false
-python-versions = ">=3.7"
-version = "1.3.0"
-
-[[package]]
-category = "main"
-description = "The little ASGI library that shines."
-name = "starlette"
-optional = false
-python-versions = ">=3.7"
-version = "0.20.4"
-
-[package.dependencies]
-anyio = ">=3.4.0,<5"
-
-[package.dependencies.typing-extensions]
-python = "<3.10"
-version = ">=3.10.0"
-
-[package.extras]
-full = ["itsdangerous", "jinja2", "python-multipart", "pyyaml", "requests"]
 
 [[package]]
 category = "main"
@@ -981,7 +877,7 @@ python-versions = "*"
 version = "1.8.1"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "threadpoolctl"
 name = "threadpoolctl"
 optional = false
@@ -989,7 +885,7 @@ python-versions = ">=3.6"
 version = "3.1.0"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "A lil' TOML parser"
 name = "tomli"
 optional = false
@@ -1092,25 +988,6 @@ socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
 
 [[package]]
 category = "main"
-description = "The lightning-fast ASGI server."
-name = "uvicorn"
-optional = false
-python-versions = ">=3.7"
-version = "0.18.3"
-
-[package.dependencies]
-click = ">=7.0"
-h11 = ">=0.8"
-
-[package.dependencies.typing-extensions]
-python = "<3.8"
-version = "*"
-
-[package.extras]
-standard = ["colorama (>=0.4)", "httptools (>=0.4.0)", "python-dotenv (>=0.13)", "pyyaml (>=5.1)", "uvloop (>=0.14.0,<0.15.0 || >0.15.0,<0.15.1 || >0.15.1)", "watchfiles (>=0.13)", "websockets (>=10.0)"]
-
-[[package]]
-category = "dev"
 description = "A CLI and library for interacting with the Weights and Biases API."
 name = "wandb"
 optional = false
@@ -1200,7 +1077,7 @@ version = ">=3.7.4"
 [[package]]
 category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-marker = "python_version < \"3.10\""
+marker = "python_version < \"3.8\""
 name = "zipp"
 optional = false
 python-versions = ">=3.7"
@@ -1211,14 +1088,13 @@ docs = ["sphinx (>=3.5)", "jaraco.packaging (>=9)", "rst.linker (>=1.9)", "furo"
 testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 (<5)", "pytest-cov", "pytest-enabler (>=1.3)", "jaraco.itertools", "func-timeout", "jaraco.functools", "more-itertools", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)"]
 
 [metadata]
-content-hash = "2c0366819ac3d475d652b11c538b65f287e450f94b68f0c9eda281695922aa3d"
+content-hash = "3cfc53293068b6cec2a48cb4654149b783dc02e221354fbe05d6974592b3398b"
 python-versions = "^3.7"
 
 [metadata.files]
 absl-py = []
 aiohttp = []
 aiosignal = []
-anyio = []
 async-timeout = []
 asynctest = []
 attrs = []
@@ -1239,7 +1115,6 @@ colorama = [
 ]
 cycler = []
 docker-pycreds = []
-fastapi = []
 fonttools = []
 frozenlist = []
 fsspec = []
@@ -1250,7 +1125,6 @@ google-auth-oauthlib = []
 grpcio = []
 gym = []
 gym-notices = []
-h11 = []
 idna = []
 importlib-metadata = []
 joblib = []
@@ -1342,7 +1216,6 @@ pyasn1-modules = [
     {file = "pyasn1_modules-0.2.8-py3.6.egg", hash = "sha256:cbac4bc38d117f2a49aeedec4407d23e8866ea4ac27ff2cf7fb3e5b570df19e0"},
     {file = "pyasn1_modules-0.2.8-py3.7.egg", hash = "sha256:c29a5e5cc7a3f05926aff34e097e84f8589cd790ce0ed41b67aed6857b26aafd"},
 ]
-pydantic = []
 pydeprecate = []
 pyparsing = [
     {file = "pyparsing-3.0.9-py3-none-any.whl", hash = "sha256:5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc"},
@@ -1352,7 +1225,6 @@ python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
 ]
-python-multipart = []
 pytorch-lightning = []
 pytorch-lightning-bolts = []
 pyyaml = [
@@ -1408,8 +1280,6 @@ six = [
 ]
 sklearn = []
 smmap = []
-sniffio = []
-starlette = []
 tensorboard = []
 tensorboard-data-server = []
 tensorboard-plugin-wit = []
@@ -1424,7 +1294,6 @@ torchvision = []
 tqdm = []
 typing-extensions = []
 urllib3 = []
-uvicorn = []
 wandb = []
 werkzeug = []
 wheel = [
