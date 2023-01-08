@@ -42,7 +42,7 @@ Once an acceptable model is trained, check the artifact path in wandb.
 wandb artifact get jfisher40/amphisbaena/amphisbaena:v6
 ```
 
-Alternately, use git lfs to download the model that is 99% accurate (on MNIST validation fold) that I already trained 😁
+Alternately, use git lfs to download the model that I already trained.
 
 ```bash
 git lfs pull
